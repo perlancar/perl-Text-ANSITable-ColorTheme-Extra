@@ -26,7 +26,6 @@ _
                 rand_rgb_color($rgb1, $rgb2);
             },
         },
-        256 => 1,
     },
 
     demo_gradation_border_color => {
@@ -63,7 +62,6 @@ _
                 $rgb;
             },
         },
-        '24bit' => 1,
     },
 
 );
