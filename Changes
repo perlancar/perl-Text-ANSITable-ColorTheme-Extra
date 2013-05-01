@@ -1,5 +1,13 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.03    2013-05-01 (SHARYANTO)
+
+        [REMOVED FEATURES]
+
+        - Remove theme: demo_gradation_border_color (merged to default_gradation
+          theme in Text-ANSITable).
+
+
 0.02    2013-04-28 (SHARYANTO)
 
         - Demo: Allow setting bgcolors.
