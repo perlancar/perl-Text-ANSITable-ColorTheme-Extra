@@ -1,5 +1,14 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.04    2013-05-02 (SHARYANTO) (not yet released)
+
+        - Tweak demo_random_border_color: base on default_nogradation.
+
+        - Not yet: Add theme: grayscale (convert other themes to grayscale).
+
+        - Not yet: Add theme: sepia (convert other themes to sepia).
+
+
 0.03    2013-05-01 (SHARYANTO)
 
         [REMOVED FEATURES]
