@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-use SHARYANTO::Color::Util qw(rgb2grayscale rgb2sepia);
+use SHARYANTO::Color::Util qw(rgb2grayscale rgb2sepia reverse_rgb_color);
 use Text::ANSITable::ColorTheme::Default ();
 
 # VERSION
@@ -58,6 +58,12 @@ sub derive_theme_transform_rgb {
     my $ct = derive_theme_transform_rgb($defct, sub { rgb2sepia(shift) });
     $ct->{summary} = 'Sepia tone';
     $color_themes{sepia} = $ct;
+}
+
+{
+    my $ct = derive_theme_transform_rgb($defct, sub { reverse_rgb_color(shift) });
+    $ct->{summary} = 'Reverse';
+    $color_themes{reverse} = $ct;
 }
 
 1;
