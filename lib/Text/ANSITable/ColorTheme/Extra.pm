@@ -13,19 +13,18 @@ my $defct = $Text::ANSITable::ColorTheme::Default::color_themes{default_gradatio
 
 our %color_themes = ();
 
-# TODO: extract common routine, e.g. derive_theme_transform_rgb($basect, sub { rgb2grayscale(shift) });
+# create a new derived theme from a based theme by applying transforms to its
+# RGB values (ANSI colors are passed unchanged).
+sub derive_theme_transform_rgb {
+    my ($basect, $func) = @_;
 
-# by default it grayscales the 'default_gradation' theme
-{
-    my $grayct = {
-        summary => 'Grayscale',
-    };
-    my $basect = $defct;
+    my $derivedct = {};
+
     for my $cn (keys %{ $basect->{colors} }) {
         my $cv = $basect->{colors}{$cn};
 
         if ($cv) {
-            $grayct->{colors}{$cn} = sub {
+            $derivedct->{colors}{$cn} = sub {
                 my ($self, %args) = @_;
                 my $basec = $basect->{colors}{$cn};
                 if (ref($basec) eq 'CODE') {
@@ -33,54 +32,32 @@ our %color_themes = ();
                 }
                 if ($basec) {
                     if (ref($basec) eq 'ARRAY') {
-                        $basec = [map {defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? rgb2grayscale($_) : $_} @$basec];
+                        $basec = [map {defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? $func->($_) : $_} @$basec];
                     } else {
                         for ($basec) {
-                            $_ = defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? rgb2grayscale($_) : $_;
+                            $_ = defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? $func->($_) : $_;
                         }
                     }
                 }
                 return $basec;
             };
         } else {
-            #$grayct->{colors}{$cn} = $cv;
+            #$derivedct->{colors}{$cn} = $cv;
         }
     }
-    $color_themes{grayscale} = $grayct;
+    $derivedct;
 }
 
-# by default it sepias the 'default_gradation' theme
 {
-    my $sepiact = {
-        summary => 'Sepia tone',
-    };
-    my $basect = $defct;
-    for my $cn (keys %{ $basect->{colors} }) {
-        my $cv = $basect->{colors}{$cn};
+    my $ct = derive_theme_transform_rgb($defct, sub { rgb2grayscale(shift) });
+    $ct->{summary} = 'Grayscale';
+    $color_themes{grayscale} = $ct;
+}
 
-        if ($cv) {
-            $sepiact->{colors}{$cn} = sub {
-                my ($self, %args) = @_;
-                my $basec = $basect->{colors}{$cn};
-                if (ref($basec) eq 'CODE') {
-                    $basec = $basec->($self, name=>$cn, %args);
-                }
-                if ($basec) {
-                    if (ref($basec) eq 'ARRAY') {
-                        $basec = [map {defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? rgb2sepia($_) : $_} @$basec];
-                    } else {
-                        for ($basec) {
-                            $_ = defined($_) && /^#?[0-9A-Fa-f]{6}$/ ? rgb2sepia($_) : $_;
-                        }
-                    }
-                }
-                return $basec;
-            };
-        } else {
-            #$sepiact->{colors}{$cn} = $cv;
-        }
-    }
-    $color_themes{sepia} = $sepiact;
+{
+    my $ct = derive_theme_transform_rgb($defct, sub { rgb2sepia(shift) });
+    $ct->{summary} = 'Sepia tone';
+    $color_themes{sepia} = $ct;
 }
 
 1;
