@@ -88,5 +88,3 @@ our %color_themes = ();
 
 =head1 DESCRIPTION
 
-=cut
-

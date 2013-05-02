@@ -68,3 +68,6 @@ sub _derive_theme_transform_rgb {
 
 1;
 # ABSTRACT: More color themes
+
+=head1 DESCRIPTION
+
