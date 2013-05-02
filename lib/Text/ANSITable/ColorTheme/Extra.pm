@@ -15,7 +15,7 @@ our %color_themes = ();
 
 # create a new derived theme from a based theme by applying transforms to its
 # RGB values (ANSI colors are passed unchanged).
-sub derive_theme_transform_rgb {
+sub _derive_theme_transform_rgb {
     my ($basect, $func) = @_;
 
     my $derivedct = {};
@@ -49,19 +49,19 @@ sub derive_theme_transform_rgb {
 }
 
 {
-    my $ct = derive_theme_transform_rgb($defct, sub { rgb2grayscale(shift) });
+    my $ct = _derive_theme_transform_rgb($defct, sub { rgb2grayscale(shift) });
     $ct->{summary} = 'Grayscale';
     $color_themes{grayscale} = $ct;
 }
 
 {
-    my $ct = derive_theme_transform_rgb($defct, sub { rgb2sepia(shift) });
+    my $ct = _derive_theme_transform_rgb($defct, sub { rgb2sepia(shift) });
     $ct->{summary} = 'Sepia tone';
     $color_themes{sepia} = $ct;
 }
 
 {
-    my $ct = derive_theme_transform_rgb($defct, sub { reverse_rgb_color(shift) });
+    my $ct = _derive_theme_transform_rgb($defct, sub { reverse_rgb_color(shift) });
     $ct->{summary} = 'Reverse';
     $color_themes{reverse} = $ct;
 }
