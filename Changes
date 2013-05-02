@@ -1,5 +1,10 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.05    2013-05-02 (SHARYANTO)
+
+        - Add Monotone themes.
+
+
 0.04    2013-05-02 (SHARYANTO)
 
         - Tweak demo_random_border_color: base on default_nogradation.
