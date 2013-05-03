@@ -67,5 +67,3 @@ our %color_themes = ();
 1;
 # ABSTRACT: Several duotone color themes
 
-=head1 DESCRIPTION
-
