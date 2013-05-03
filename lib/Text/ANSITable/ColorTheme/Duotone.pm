@@ -60,8 +60,8 @@ our %color_themes = ();
                 $fr2, $fg2, $fb2,
                 $fr3, $fg3, $fb3,
             )});
-    $ct->{summary} = 'Random tone on every run';
-    $color_themes{random_tone1} = $ct;
+    $ct->{summary} = 'Random duotone on every run';
+    $color_themes{duotone_random} = $ct;
 }
 
 1;
