@@ -96,6 +96,29 @@ _
     $color_themes{demo_random_24bit} = $ct;
 }
 
+{
+    my $ct = {
+        summary => "Show random color according to detected color depth",
+    };
+    my $sub = sub {
+        my $self = shift;
+        my $cd = $self->_detect_terminal->{color_depth};
+        if ($cd >= 2**24) {
+            return rand_rgb_color();
+        } elsif ($cd >= 256) {
+            return "\e[38;5;".int(rand()*256)."m";
+        } elsif ($cd >= 16) {
+            return "\e[".(30+int(rand()*8)).(rand() > 0.5 ? ";1":"")."m";
+        } else {
+            return undef;
+        }
+    };
+    for my $c (keys %{ $defct->{colors} }) {
+        $ct->{colors}{$c} = $sub;
+    }
+    $color_themes{demo_random} = $ct;
+}
+
 1;
 # ABSTRACT: Demo color themes
 
