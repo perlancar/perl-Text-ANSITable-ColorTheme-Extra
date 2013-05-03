@@ -1,5 +1,10 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.07    2013-05-03 (SHARYANTO)
+
+        - Add themes: demo_random{,_8,_16,_256,_24bit}.
+
+
 0.06    2013-05-03 (SHARYANTO)
 
         - Add Duotone themes.
