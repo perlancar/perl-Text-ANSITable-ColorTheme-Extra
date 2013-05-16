@@ -13,7 +13,7 @@ my $defct = Text::ANSITable->get_color_theme("Default::default_gradation");
 
 our %color_themes = ();
 
-sub modify_rgb_weights {
+sub _modify_rgb_weights {
 
     my ($rgb, $fr1, $fg1, $fb1, $fr2, $fg2, $fb2, $fr3, $fg3, $fb3) = @_;
 
@@ -42,7 +42,7 @@ sub modify_rgb_weights {
 {
     my $ct = create_color_theme_transform(
         $defct, sub {
-            modify_rgb_weights(
+            _modify_rgb_weights(
                 shift,
                 0.4, 0.3, 0.2,
                 0.3, 0.8, 0.4,
@@ -55,7 +55,7 @@ sub modify_rgb_weights {
 {
     my $ct = create_color_theme_transform(
         $defct, sub {
-            modify_rgb_weights(
+            _modify_rgb_weights(
                 shift,
                 0.1, 0.3, 0.1,
                 0.2, 0.5, 0.3,
@@ -80,7 +80,7 @@ sub modify_rgb_weights {
             state $fr3 = rand();
             state $fg3 = rand();
             state $fb3 = rand();
-            modify_rgb_weights(
+            _modify_rgb_weights(
                 shift,
                 $fr1, $fg1, $fb1,
                 $fr2, $fg2, $fb2,
