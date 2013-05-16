@@ -5,29 +5,29 @@ use strict;
 use warnings;
 
 use SHARYANTO::Color::Util qw(rgb2grayscale rgb2sepia reverse_rgb_color);
-require Text::ANSITable::ColorTheme::Default;
-require Text::ANSITable::ColorThemeUtil;
+require Text::ANSITable;
+use Text::ANSITable::ColorThemeUtil qw(create_color_theme_transform);
 
 # VERSION
 
-my $defct = $Text::ANSITable::ColorTheme::Default::color_themes{default_gradation};
+my $defct = Text::ANSITable->get_color_theme("Default::default_gradation");
 
 our %color_themes = ();
 
 {
-    my $ct = Text::ANSITable::ColorThemeUtil::derive_theme_transform_rgb($defct, sub { rgb2grayscale(shift) });
+    my $ct = create_color_theme_transform($defct, sub { rgb2grayscale(shift) });
     $ct->{summary} = 'Grayscale';
     $color_themes{grayscale} = $ct;
 }
 
 {
-    my $ct = Text::ANSITable::ColorThemeUtil::derive_theme_transform_rgb($defct, sub { rgb2sepia(shift) });
+    my $ct = create_color_theme_transform($defct, sub { rgb2sepia(shift) });
     $ct->{summary} = 'Sepia tone';
     $color_themes{sepia} = $ct;
 }
 
 {
-    my $ct = Text::ANSITable::ColorThemeUtil::derive_theme_transform_rgb($defct, sub { reverse_rgb_color(shift) });
+    my $ct = create_color_theme_transform($defct, sub { reverse_rgb_color(shift) });
     $ct->{summary} = 'Reverse';
     $color_themes{reverse} = $ct;
 }
