@@ -16,18 +16,21 @@ our %color_themes = ();
 
 {
     my $ct = create_color_theme_transform($defct, sub { rgb2grayscale(shift) });
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Grayscale';
     $color_themes{grayscale} = $ct;
 }
 
 {
     my $ct = create_color_theme_transform($defct, sub { rgb2sepia(shift) });
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Sepia tone';
     $color_themes{sepia} = $ct;
 }
 
 {
     my $ct = create_color_theme_transform($defct, sub { reverse_rgb_color(shift) });
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Reverse';
     $color_themes{reverse} = $ct;
 }

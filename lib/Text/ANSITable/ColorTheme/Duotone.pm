@@ -48,6 +48,7 @@ sub _modify_rgb_weights {
                 0.3, 0.8, 0.4,
                 0.3, 0.5, 0.1,
             )});
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Duotone green 1';
     $color_themes{duotone_green1} = $ct;
 }
@@ -61,6 +62,7 @@ sub _modify_rgb_weights {
                 0.2, 0.5, 0.3,
                 0.4, 0.7, 0.3,
             )});
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Duotone cyan 1';
     $color_themes{duotone_cyan1} = $ct;
 }
@@ -86,6 +88,7 @@ sub _modify_rgb_weights {
                 $fr2, $fg2, $fb2,
                 $fr3, $fg3, $fb3,
             )});
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Random duotone on every run';
     $color_themes{duotone_random} = $ct;
 }

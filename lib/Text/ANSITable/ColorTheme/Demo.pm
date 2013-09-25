@@ -17,6 +17,7 @@ my $defct = Text::ANSITable->get_color_theme("Default::default_nogradation");
 {
     my $ct = clone $defct;
 
+    $ct->{v} = 1.1;
     $ct->{summary} = 'Demoes coderef in item color';
     $ct->{description} = <<'_';
 
@@ -46,6 +47,7 @@ _
 
 {
     my $ct = {
+        v => 1.1,
         summary => "Show random 8 color",
     };
     my $sub = sub {
@@ -59,6 +61,7 @@ _
 
 {
     my $ct = {
+        v => 1.1,
         summary => "Show random 16 color",
     };
     my $sub = sub {
@@ -72,6 +75,7 @@ _
 
 {
     my $ct = {
+        v => 1.1,
         summary => "Show random 256 color",
     };
     my $sub = sub {
@@ -85,6 +89,7 @@ _
 
 {
     my $ct = {
+        v => 1.1,
         summary => "Show random 24bit color",
     };
     my $sub = sub {
@@ -98,6 +103,7 @@ _
 
 {
     my $ct = {
+        v => 1.1,
         summary => "Show random color according to detected color depth",
     };
     my $sub = sub {
