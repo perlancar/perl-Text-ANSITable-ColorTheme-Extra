@@ -38,7 +38,7 @@ _
         if ($rgbb1 && $rgbb2) {
             $rgbb = rand_rgb_color($rgbb1, $rgbb2);
         }
-        [$rgbf, $rgbb];
+        {fg=>$rgbf, bg=>$rgbb};
     };
 
     $color_themes{demo_random_border_color} = $ct;
@@ -49,7 +49,7 @@ _
         summary => "Show random 8 color",
     };
     my $sub = sub {
-        "\e[".(30+int(rand()*8))."m";
+        {ansi_fg => "\e[".(30+int(rand()*8))."m"};
     };
     for my $c (keys %{ $defct->{colors} }) {
         $ct->{colors}{$c} = $sub;
@@ -62,7 +62,7 @@ _
         summary => "Show random 16 color",
     };
     my $sub = sub {
-        "\e[".(30+int(rand()*8)).(rand() > 0.5 ? ";1":"")."m";
+        {ansi_fg=>"\e[".(30+int(rand()*8)).(rand() > 0.5 ? ";1":"")."m"};
     };
     for my $c (keys %{ $defct->{colors} }) {
         $ct->{colors}{$c} = $sub;
@@ -75,7 +75,7 @@ _
         summary => "Show random 256 color",
     };
     my $sub = sub {
-        "\e[38;5;".int(rand()*256)."m";
+        {ansi_fg=>"\e[38;5;".int(rand()*256)."m"};
     };
     for my $c (keys %{ $defct->{colors} }) {
         $ct->{colors}{$c} = $sub;
@@ -106,9 +106,10 @@ _
         if ($cd >= 2**24) {
             return rand_rgb_color();
         } elsif ($cd >= 256) {
-            return "\e[38;5;".int(rand()*256)."m";
+            return {ansi_fg=>"\e[38;5;".int(rand()*256)."m"};
         } elsif ($cd >= 16) {
-            return "\e[".(30+int(rand()*8)).(rand() > 0.5 ? ";1":"")."m";
+            return {ansi_fg=>"\e[".(30+int(rand()*8)).
+                        (rand() > 0.5 ? ";1":"")."m"};
         } else {
             return undef;
         }
@@ -121,4 +122,3 @@ _
 
 1;
 # ABSTRACT: Demo color themes
-
