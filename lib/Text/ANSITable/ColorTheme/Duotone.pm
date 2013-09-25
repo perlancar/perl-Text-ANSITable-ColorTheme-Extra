@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
+use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-use Text::ANSITable::ColorThemeUtil qw(create_color_theme_transform);
 
 # VERSION
 
@@ -92,4 +92,3 @@ sub _modify_rgb_weights {
 
 1;
 # ABSTRACT: Several duotone color themes
-

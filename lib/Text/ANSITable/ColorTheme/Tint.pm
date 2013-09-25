@@ -6,8 +6,8 @@ use warnings;
 
 use Data::Clone;
 use SHARYANTO::Color::Util qw(tint_rgb_color);
+use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-use Text::ANSITable::ColorThemeUtil qw(create_color_theme_transform);
 
 # VERSION
 

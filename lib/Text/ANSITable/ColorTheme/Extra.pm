@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 use SHARYANTO::Color::Util qw(rgb2grayscale rgb2sepia reverse_rgb_color);
+use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-use Text::ANSITable::ColorThemeUtil qw(create_color_theme_transform);
 
 # VERSION
 

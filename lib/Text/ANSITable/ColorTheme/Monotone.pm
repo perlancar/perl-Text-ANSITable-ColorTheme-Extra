@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 use Convert::Color;
+use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-use Text::ANSITable::ColorThemeUtil qw(create_color_theme_transform);
 
 # VERSION
 
@@ -74,4 +74,3 @@ Monotone themes uses single-hue colors, differing only in saturation and
 lightness/value.
 
 =cut
-
