@@ -1,5 +1,11 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.10    2013-09-25 (SHARYANTO)
+
+        - No functional changes. Adjust to Text::ANSITable::ColorThemeUtil being
+          renamed to SHARYANTO::ColorTheme::Util.
+
+
 0.09    2013-05-16 (SHARYANTO)
 
         - Add Tint themes.
@@ -7,8 +13,8 @@ Revision history for Text-ANSITable-ColorTheme-Extra
 
 0.08    2013-05-16 (SHARYANTO)
 
-        No functional changes. Move Text::ANSITable::ColorThemeUtil to
-        Text-ANSITable so it can be used without us.
+        - No functional changes. Move Text::ANSITable::ColorThemeUtil to
+          Text-ANSITable so it can be used without us.
 
 
 0.07    2013-05-03 (SHARYANTO)
@@ -48,4 +54,4 @@ Revision history for Text-ANSITable-ColorTheme-Extra
 
 0.01    2013-04-28 (SHARYANTO)
 
-        First release.
+        - First release.
