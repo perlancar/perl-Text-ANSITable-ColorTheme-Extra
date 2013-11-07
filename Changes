@@ -1,5 +1,11 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.12    2013-11-07 (SHARYANTO)
+
+        - No functional changes. Rebuild to test MetaCPAN indexing (previous
+          release is not indexed by MetaCPAN).
+
+
 0.11    2013-09-25 (SHARYANTO)
 
         - No functional changes. Update to Text::ANSITable 0.22.
