@@ -108,7 +108,7 @@ _
     };
     my $sub = sub {
         my $self = shift;
-        my $cd = $self->_detect_terminal->{color_depth};
+        my $cd = $self->detect_terminal->{color_depth};
         if ($cd >= 2**24) {
             return rand_rgb_color();
         } elsif ($cd >= 256) {
