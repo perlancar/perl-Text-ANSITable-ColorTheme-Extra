@@ -1,5 +1,14 @@
 Revision history for Text-ANSITable-ColorTheme-Extra
 
+0.14    2014-12-11 (PERLANCAR)
+
+	- No functional changes.
+
+	- Use new name of renamed modules (SHARYANTO::Color::Util ->
+	  Color::RGB::Util, SHARYANTO::ColorTheme::Util ->
+	  Color::Theme::Util).
+
+
 0.13    2014-04-09 (SHARYANTO)
 
         - No functional changes.
