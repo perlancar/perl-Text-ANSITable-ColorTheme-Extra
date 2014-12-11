@@ -1,15 +1,16 @@
 package Text::ANSITable::ColorTheme::Tint;
 
+# DATE
+# VERSION
+
 use 5.010;
 use strict;
 use warnings;
 
 use Data::Clone;
-use SHARYANTO::Color::Util qw(tint_rgb_color);
-use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
+use Color::RGB::Util qw(tint_rgb_color);
+use Color::Theme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-
-# VERSION
 
 our %color_themes = ();
 

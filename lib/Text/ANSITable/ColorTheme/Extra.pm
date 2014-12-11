@@ -1,14 +1,15 @@
 package Text::ANSITable::ColorTheme::Extra;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
 
-use SHARYANTO::Color::Util qw(rgb2grayscale rgb2sepia reverse_rgb_color);
-use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
+use Color::RGB::Util qw(rgb2grayscale rgb2sepia reverse_rgb_color);
+use Color::Theme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-
-# VERSION
 
 my $defct = Text::ANSITable->get_color_theme("Default::default_gradation");
 

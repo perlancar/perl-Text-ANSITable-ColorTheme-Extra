@@ -1,13 +1,14 @@
 package Text::ANSITable::ColorTheme::Duotone;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
 
-use SHARYANTO::ColorTheme::Util qw(create_color_theme_transform);
+use Color::Theme::Util qw(create_color_theme_transform);
 require Text::ANSITable;
-
-# VERSION
 
 my $defct = Text::ANSITable->get_color_theme("Default::default_gradation");
 

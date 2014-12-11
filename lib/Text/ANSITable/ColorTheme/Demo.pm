@@ -1,14 +1,15 @@
 package Text::ANSITable::ColorTheme::Demo;
 
+# DATE
+# VERSION
+
 use 5.010;
 use strict;
 use warnings;
 
 use Data::Clone;
-use SHARYANTO::Color::Util qw(rand_rgb_color mix_2_rgb_colors);
+use Color::RGB::Util qw(rand_rgb_color mix_2_rgb_colors);
 require Text::ANSITable;
-
-# VERSION
 
 our %color_themes = ();
 
