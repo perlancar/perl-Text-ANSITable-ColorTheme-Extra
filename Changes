@@ -1,4 +1,4 @@
-0.14    2014-12-11 (PERLANCAR)
+0.14    2014-12-11  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -7,64 +7,64 @@
 	  Color::Theme::Util).
 
 
-0.13    2014-04-09 (SHARYANTO)
+0.13    2014-04-09  Released-By: SHARYANTO
 
         - No functional changes.
 
         - Update Text::ANSITable's method name.
 
 
-0.12    2013-11-07 (SHARYANTO)
+0.12    2013-11-07  Released-By: SHARYANTO
 
         - No functional changes. Rebuild to test MetaCPAN indexing (previous
           release is not indexed by MetaCPAN).
 
 
-0.11    2013-09-25 (SHARYANTO)
+0.11    2013-09-25  Released-By: SHARYANTO
 
         - No functional changes. Update to Text::ANSITable 0.22.
 
 
-0.10    2013-09-25 (SHARYANTO)
+0.10    2013-09-25  Released-By: SHARYANTO
 
         - No functional changes. Adjust to Text::ANSITable::ColorThemeUtil being
           renamed to SHARYANTO::ColorTheme::Util.
 
 
-0.09    2013-05-16 (SHARYANTO)
+0.09    2013-05-16  Released-By: SHARYANTO
 
         - Add Tint themes.
 
 
-0.08    2013-05-16 (SHARYANTO)
+0.08    2013-05-16  Released-By: SHARYANTO
 
         - No functional changes. Move Text::ANSITable::ColorThemeUtil to
           Text-ANSITable so it can be used without us.
 
 
-0.07    2013-05-03 (SHARYANTO)
+0.07    2013-05-03  Released-By: SHARYANTO
 
         - Add themes: demo_random{,_8,_16,_256,_24bit}.
 
 
-0.06    2013-05-03 (SHARYANTO)
+0.06    2013-05-03  Released-By: SHARYANTO
 
         - Add Duotone themes.
 
 
-0.05    2013-05-02 (SHARYANTO)
+0.05    2013-05-02  Released-By: SHARYANTO
 
         - Add Monotone themes.
 
 
-0.04    2013-05-02 (SHARYANTO)
+0.04    2013-05-02  Released-By: SHARYANTO
 
         - Tweak demo_random_border_color: base on default_nogradation.
 
         - Add themes: grayscale, sepia, reverse.
 
 
-0.03    2013-05-01 (SHARYANTO)
+0.03    2013-05-01  Released-By: SHARYANTO
 
         [REMOVED FEATURES]
 
@@ -72,11 +72,11 @@
           theme in Text-ANSITable).
 
 
-0.02    2013-04-28 (SHARYANTO)
+0.02    2013-04-28  Released-By: SHARYANTO
 
         - Demo: Allow setting bgcolors.
 
 
-0.01    2013-04-28 (SHARYANTO)
+0.01    2013-04-28  Released-By: SHARYANTO
 
         - First release.
